@@ -1,18 +1,18 @@
-name:workflow with dropdown
+name: workflow with dropdown
 on: 
   workflow_dispatch:
     inputs:
       environment:
-        description:'Select the environment'
-        required:true
-        type:choice
+        description: 'Select the environment'
+        required: true
+        type: choice
         options:
             -devleopment
             -staging
             -production
 jobs:
   deploy:
-    runs-on:ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      -name:Print Selected Environment
+      -name: Print Selected Environment
       run: echo "Deploying to ${{github.event.inputs.environment}} environment"
