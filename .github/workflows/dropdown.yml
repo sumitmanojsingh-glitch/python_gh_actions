@@ -39,9 +39,9 @@ jobs:
         run: echo "Deploying to ${{ github.event.inputs.environment }} environment"
 
       - name: Start the Glue streaming Job
-        if: ${{ github.event.inputs.['job-action'] == 'Start' }}
-        run: echo "Start Job: ${{ github.event.inputs.['glue-streaming-job'] }}"
+        if: ${{ github.event.inputs['job-action'] == 'Start' }}
+        run: echo "Start Job: ${{ github.event.inputs['glue-streaming-job'] }}"
 
       - name: Stop the Glue streaming Job
-        if: ${{ github.event.inputs.['job-action'] == 'Stop' }}
-        run: echo "Stop Job: ${{ github.event.inputs.['glue-streaming-job'] }}"
+        if: ${{ github.event.inputs['job-action'] == 'Stop' }}
+        run: echo "Stop Job: ${{ github.event.inputs['glue-streaming-job'] }}"
