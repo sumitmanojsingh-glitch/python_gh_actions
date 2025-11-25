@@ -40,7 +40,7 @@ jobs:
 
       - name: Start the Glue streaming Job
         if: ${{ github.event.inputs.job_action == 'Start' }}
-        run: echo "Start Job:"
+        run: echo "Start Job ${{ github.event.inputs.glue_streaming_job }}"
 
       - name: Stop the Glue streaming Job
         if: ${{ github.event.inputs.job_action == 'Stop' }}
