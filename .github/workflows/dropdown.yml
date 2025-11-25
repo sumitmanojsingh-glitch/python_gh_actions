@@ -3,7 +3,7 @@ name: workflow with dropdown
 on: 
   workflow_dispatch:
     inputs:
-      glue-streaming-job:
+      glue_streaming_job:
         description: 'Select the streaming Job name'
         required: true
         type: choice
@@ -21,7 +21,7 @@ on:
           - development
           - staging
           - production
-      job-action:
+      job_action:
         description: 'Select the Start and Stop'
         required: true
         type: choice
@@ -39,9 +39,9 @@ jobs:
         run: echo "Deploying to ${{ github.event.inputs.environment }} environment"
 
       - name: Start the Glue streaming Job
-        if: ${{ github.event.inputs['job-action'] == 'Start' }}
-        run: echo "Start Job: ${{ github.event.inputs['glue-streaming-job'] }}"
+        if: ${{ github.event.inputs.job_action == 'Start' }}
+        run: echo "Start Job: ${{ github.event.inputs.glue_streaming_job }}"
 
       - name: Stop the Glue streaming Job
-        if: ${{ github.event.inputs['job-action'] == 'Stop' }}
-        run: echo "Stop Job: ${{ github.event.inputs['glue-streaming-job'] }}"
+        if: ${{ github.event.inputs.job_action == 'Stop' }}
+        run: echo "Stop Job: ${{ github.event.inputs.glue_streaming_job }}"
